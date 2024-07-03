@@ -127,10 +127,9 @@ function generateAd() {
         //console.log("upgrade Item", item);
         receivingSide.push(parseFloat(item));
         receivingSide.push("upgrade");
-        receivingSide.push("adds");
+        receivingSide.push("any");
         postAd(sendingSide, receivingSide);
       } else {
-        receivingSide.push("adds");
         let itemIdValArr = [];
         for (const item in itemValues) {
           if (itemValues[item].type >= config.minDemand) {
@@ -164,8 +163,10 @@ function generateAd() {
           }
           if (maxSId < maxRId) {
             receivingSide.push("upgrade");
+            receivingSide.push("any");
           } else {
             receivingSide.push("downgrade");
+            receivingSide.push("adds");
           }
           postAd(sendingSide, receivingSide);
         } else {
@@ -173,7 +174,6 @@ function generateAd() {
         }
       }
     } else {
-      receivingSide.push("adds");
       let itemIdValArr = [];
       for (const item in itemValues) {
         if (itemValues[item].type >= config.minDemand) {
@@ -207,8 +207,10 @@ function generateAd() {
         }
 
         if (maxSValue < maxRValue) {
+          receivingSide.push("any");
           receivingSide.push("upgrade");
         } else {
+          receivingSide.push("adds");
           receivingSide.push("downgrade");
         }
         postAd(sendingSide, receivingSide);
