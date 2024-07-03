@@ -31,7 +31,7 @@ async function getValues() {
     },
   }).then((res) => res.json()).then((json) => {
     for (const item in json.items) {
-      let type = json.items[item][5] >= 0 ? json.items[item][5] : null;
+      let type = json.items[item][5] >= 0 ? json.items[item][5] : 0;
       itemValues[item] = { value: Math.abs(json.items[item][4]), type: type }; //assings the item values and demand
     }
     //console.log(itemValues)
@@ -104,7 +104,6 @@ function generateAd() {
     let receivingSide = [];
     let totalSendValue = 0;
     for (const item of sendingSide) {
-      console.log(item)
       totalSendValue = totalSendValue + itemValues[item].value;
     }
     //console.log("Total Send Value", totalSendValue);
@@ -162,11 +161,11 @@ function generateAd() {
             }
           }
           if (maxSId < maxRId) {
-            receivingSide.push("upgrade");
             receivingSide.push("any");
+            receivingSide.push("upgrade");
           } else {
-            receivingSide.push("downgrade");
             receivingSide.push("adds");
+            receivingSide.push("downgrade");
           }
           postAd(sendingSide, receivingSide);
         } else {
