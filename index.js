@@ -104,7 +104,7 @@ function generateAd() {
     let receivingSide = [];
     let totalSendValue = 0;
     for (const item of sendingSide) {
-      console.log(itemValues)
+      console.log(itemValues[`${item}`])
       totalSendValue = totalSendValue + itemValues[item].value;
     }
     //console.log("Total Send Value", totalSendValue);
