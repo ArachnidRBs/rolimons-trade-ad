@@ -67,7 +67,7 @@ function findValidPairs(items, min, max) {
   for (let i = 0; i < items.length; i++) {
     for (let j = i + 1; j < items.length; j++) {
       const sum = items[i].value + items[j].value;
-      if (sum > min * (config.minRequestPercent / 100) && sum < max) {
+      if (sum > min && sum < max) {
         validPairs.push([items[i], items[j]]);
       }
     }
