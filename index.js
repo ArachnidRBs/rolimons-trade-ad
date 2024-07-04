@@ -160,7 +160,7 @@ function generateAd() {
               }
             }
           }
-          if (maxSId < maxRId) {
+          if (maxSValue < maxRValue) {
             receivingSide.push("any");
             receivingSide.push("upgrade");
           } else {
