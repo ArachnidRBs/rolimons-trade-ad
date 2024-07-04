@@ -109,14 +109,11 @@ function generateAd() {
     //console.log("Total Send Value", totalSendValue);
     let upgOrDown = Math.floor(Math.random() * 2);
     if (upgOrDown == 1) {
-      let requestValue = totalSendValue * (1 - config.RequestPercent / 100);
+      let requestValue = totalSendValue * (1 + config.RequestPercent / 100);
+      let minRequestValue = totalSendValue * (1 + config.minRequestPercent / 100);
       let options = [];
       for (const item in itemValues) {
-        if (
-          itemValues[item].value >= requestValue &&
-          itemValues[item].value <= totalSendValue &&
-          itemValues[item].type >= config.minDemand
-        ) {
+        if (itemValues[item].value <= requestValue && itemValues[item].value <= totalSendValue && itemValues[item].type >= config.minDemand && minRequestValue <= itemValues[item].value) {
           options.push(item);
         }
       }
