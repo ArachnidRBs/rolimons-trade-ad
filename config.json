@@ -1,10 +1,10 @@
 {
-  "minItemValue": 50000,
+  "minItemValue": 40000,
   "maxItemValue": 100000000,
   "smartAlgo": true,
    "_comment": "Available tags are 'any', 'upgrade', 'downgrade', 'rap', 'rares', 'demand', 'wishlist', 'robux', 'adds', 'projecteds'. You can leave empty for no tags at all. For smart algo, it determines if the item requested is an upgrade/downgrade. Do not add upgrade/downgrade tag with it.",
   "maxItemsSend": 4,
-  "minItemsSend": 2,
+  "minItemsSend": 3,
   "sendBlacklist": ["23310997"],
   "RequestPercent": "8",
   "minRequestPercent": "4",
