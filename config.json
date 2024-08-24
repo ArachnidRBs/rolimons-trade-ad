@@ -6,8 +6,8 @@
   "maxItemsSend": 4,
   "minItemsSend": 3,
   "sendBlacklist": ["23310997"],
-  "RequestPercent": "5",
-  "minRequestPercent": "3",
+  "RequestPercent": "4",
+  "minRequestPercent": "1",
   "_comment2": "This is for percent UNDER the actual value. For example, 200k, 20% under that is 160k, itll add items 160-200k.",
   "minDemand": 2,
   "_comment3": "0 = terrible, 1 = Low, 2 = Normal, 3 = High, 4 = Amazing"
